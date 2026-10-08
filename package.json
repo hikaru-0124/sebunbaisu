@@ -1,0 +1,16 @@
+{
+  "name": "seven-vice-browser",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/server.mjs",
+    "start": "node scripts/server.mjs",
+    "test": "node tests/engine.test.mjs && node tests/rooms.test.mjs",
+    "test:browser": "node tests/browser.mjs",
+    "test:online": "node tests/online-browser.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0"
+  }
+}

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#13131a">
+  <title>セブンヴァイス — Seven Vice</title>
+  <meta name="description" content="七つの大罪を集めるカードゲーム。友人との3〜4人の通信対戦とCPU対戦で遊べるセブンヴァイスのブラウザ版。">
+  <link rel="stylesheet" href="/src/style.css">
+  <script type="module" src="/src/app.js"></script>
+</head>
+<body>
+  <header class="header"><a class="brand" href="/" aria-label="セブンヴァイス ホーム"><span class="brand-mark">Ⅶ</span><span>SEVEN VICE<small>セブンヴァイス</small></span></a><nav><span class="edition">BROWSER EDITION</span><button id="rules-button" class="quiet">遊び方 <span>↗</span></button></nav></header>
+  <main id="app"></main>
+  <dialog id="action-dialog" class="action-dialog" aria-labelledby="action-title" aria-describedby="action-description"><div id="action-content" aria-live="polite"></div><div class="action-dialog-controls"><label for="presentation-speed">演出の進め方</label><select id="presentation-speed"><option value="normal">自動 · 通常</option><option value="slow">自動 · ゆっくり</option><option value="manual">確認して進む</option></select><button id="acknowledge-action" class="primary">次へ →</button></div><div class="action-timer" aria-hidden="true"><i></i></div></dialog>
+  <footer><span>SEVEN SINS. ONE WINNER.</span><span>原作：妄想ゲームズ☆ · Game design H1R0 / Illustration JAIBON</span></footer>
+  <dialog id="rules-dialog" class="rules-dialog"><div class="dialog-head"><div><small class="eyebrow">HOW TO PLAY</small><h2>七つの大罪を、あなたの場に。</h2></div><button data-close="rules-dialog" class="quiet">閉じる ×</button></div><p>山札から1枚引き、手札から1枚を自分の場に出す。そのカードの効果でカードを集めます。効果で移動したカードの効果は発動しません。</p><div class="win-rules"><div><strong>4 <small>枚</small></strong><span>同じ種類を集める</span><b>＋1点</b></div><div><strong>7 <small>種類</small></strong><span>すべての種類を集める</span><b>＋2点</b></div><div><strong>3 <small>点</small></strong><span>先に獲得すると</span><b>勝利</b></div></div><div id="rule-cards"></div><details><summary>山札がなくなったとき・この版の裁定</summary><p>山札がなくなったら、残った手札を出して続けます。全員の手札が尽き、得点者がいなければ無得点で次のラウンドへ。得点者は次の先手です。</p><p>効果の処理後に得点判定します。対象がなければ可能な部分だけ処理します。最初の怠惰は効果なし、連続した怠惰はコピー元の効果を引き継ぎます。同時に条件がそろった場合は手番プレイヤーから時計回りに判定。無得点時は先手を維持します。右隣は時計回りの手番順で一つ前の席です。</p><p>憤怒はご指定の修正版を採用：相手の手札を場に移し、相手が補充。自分の手札は保持します。初回の先手はランダムです。</p></details></dialog>
+  <dialog id="card-dialog"><div id="card-detail"></div><button data-close="card-dialog" class="quiet">閉じる ×</button></dialog>
+  <dialog id="leave-dialog"><span class="eyebrow">LEAVE ROOM</span><h2>ルームを退出しますか？</h2><p>対戦中に退出すると、この対戦は終了し、残ったメンバーは待機室に戻ります。</p><div class="dialog-actions"><button data-close="leave-dialog" class="quiet">続ける</button><button id="confirm-leave" class="primary">退出する</button></div></dialog>
+  <dialog id="restart-dialog"><small class="eyebrow">NEW GAME</small><h2>新しい対戦を始めますか？</h2><p>今の対戦の得点と進行状況はリセットされます。</p><div class="dialog-actions"><button data-close="restart-dialog" class="quiet">続ける</button><button id="confirm-restart" class="primary">新しい対戦</button></div></dialog>
+</body>
+</html>
